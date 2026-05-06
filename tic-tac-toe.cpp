@@ -2,6 +2,10 @@
 #include <string>
 using namespace std;
 
+void printBoard(char board[3][3]);
+void inputMove(char board[3][3], int &r, int &c);
+char checkWinner(char board[3][3]);
+
 int main() {
 	char board[3][3] = {
 		{' ', ' ', ' '},
@@ -14,26 +18,42 @@ int main() {
 	char currentPlayer = playerX;
 	int r = -1;
 	int c = -1;
-	char winner = ' ';
 	
 	for (int i = 0; i < 9; i++) {
-		//in bang
-		cout << "   |   |   " << endl;
-		cout << " " << board[0][0] << " | " << board[0][1] << " | " << board[0][2] << endl;
-		cout << "___|___|___" << endl;
-		cout << "   |   |   " << endl;
-		cout << " " << board[1][0] << " | " << board[1][1] << " | " << board[1][2] << endl;
-		cout << "___|___|___" << endl;
-		cout << "   |   |   " << endl;
-		cout << " " << board[2][0] << " | " << board[2][1] << " | " << board[2][2] << endl;
-		cout << "   |   |   " << endl;
+		printBoard(board);
 		
-		if (winner != ' ')
+		if (checkWinner(board) != ' ')
 			break;
 		
 		cout << "Nguoi choi hien tai la: " << currentPlayer << endl;
-		//xu ly cac truong hop nhap input cua user
-		while (true) {
+		inputMove(board, r, c);
+
+		board[r][c] = currentPlayer;
+		currentPlayer = (currentPlayer == playerX) ? playerO : playerX;
+	}
+	
+	if (checkWinner(board) != ' ') 
+		cout << "Xin chuc mung! Nguoi choi " << checkWinner(board) << " da chien thang!!!" << endl;
+	else 
+		cout << "Hoa!!!" << endl;
+		
+	return 0;
+}
+
+void printBoard(char board[3][3]) {
+	cout << "   |   |   " << endl;
+	cout << " " << board[0][0] << " | " << board[0][1] << " | " << board[0][2] << endl;
+	cout << "___|___|___" << endl;
+	cout << "   |   |   " << endl;
+	cout << " " << board[1][0] << " | " << board[1][1] << " | " << board[1][2] << endl;
+	cout << "___|___|___" << endl;
+	cout << "   |   |   " << endl;
+	cout << " " << board[2][0] << " | " << board[2][1] << " | " << board[2][2] << endl;
+	cout << "   |   |   " << endl;
+}
+
+void inputMove(char board[3][3], int &r, int &c) {
+	while (true) {
 			cout << "Nhap hang va cot tu 0 - 2: ";
 			//sua loi neu nguoi dung nhap gia tri co kieu du lieu khong hop le (chuoi, thap phan...)
 			if(!(cin >> r >> c)) {
@@ -48,41 +68,28 @@ int main() {
 				cout << "O nay da duoc chon, vui long thu lai!" << endl;
 			else
 				break;
-			r = -1;
-			c = -1;
 		}
+}
 
-		board[r][c] = currentPlayer;
-		currentPlayer = (currentPlayer == playerX) ? playerO : playerX;
-		
-		//kiem tra chien thang
-		//hang doc
-		for (int j = 0; j < 3; j++) {
-			if (board[j][0] != ' ' && board[j][0] == board[j][1] && board[j][1] == board[j][2]) {
-				winner = board[j][0];
-				break;
-			}
-		}
-		//hang ngang
-		for (int j = 0; j < 3; j++) {
-			if (board[0][j] != ' ' && board[0][j] == board[1][j] && board[1][j] == board[2][j]) {
-				winner = board[0][j];
-				break;
-			}
-		}
-		//hang cheo
-		if (board[0][0] != ' ' && board[0][0] == board [1][1] && board [1][1] == board[2][2]) {
-			winner = board[0][0];
-		}
-		else if (board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
-			winner = board[0][2];
+char checkWinner(char board[3][3]) {
+	//hang ngang
+	for (int j = 0; j < 3; j++) {
+		if (board[j][0] != ' ' && board[j][0] == board[j][1] && board[j][1] == board[j][2]) {
+			return board[j][0];
 		}
 	}
-	
-	if (winner != ' ') 
-		cout << "Xin chuc mung! Nguoi choi " << winner << " da chien thang!!!" << endl;
-	else 
-		cout << "Hoa!!!" << endl;
-		
-	return 0;
+	//hang doc
+	for (int j = 0; j < 3; j++) {
+		if (board[0][j] != ' ' && board[0][j] == board[1][j] && board[1][j] == board[2][j]) {
+			return board[0][j];		
+		}
+	}
+	//hang cheo
+	if (board[0][0] != ' ' && board[0][0] == board [1][1] && board [1][1] == board[2][2]) {
+		return board[0][0];
+	}
+	else if (board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+		return board[0][2];
+	}
+	return ' ';
 }
