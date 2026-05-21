@@ -3,3 +3,8 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+div {
+    background: url(../img/background.png) no-fixed repeat;
+    background-size: cover;
+}
