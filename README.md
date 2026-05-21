@@ -6,9 +6,9 @@ This repository contains mini projects and practice exercises created during my 
 ## 🎯 Purpose
 The purpose of this repository is to:
 - Practice programming skills
-- Improve problem - solving.
-- Learn project structure and github workflow.
-- Explore different technologies.
+- Improve problem - solving
+- Learn project structure and github workflow
+- Explore different technologies
 
 ## 🚀 Mini-projects
 ### Tic Tac Toe (C++)
