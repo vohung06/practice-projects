@@ -14,7 +14,7 @@ The purpose of this repository is to:
 ### Tic Tac Toe (C++)
 A simple console-based Tic Tac Toe game written in C++.
 
-![img 1](img-project/img-tictactoe1).jpg
+![img 1](img-project/img-tictactoe1.jpg)
 <p align="center">
   <i>1. Preview of the TicTacToe game</i>
 </p>
