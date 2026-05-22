@@ -4,7 +4,13 @@
     box-sizing: border-box;
 }
 
-div {
-    background: url(../img/background.png) no-fixed repeat;
+body {
+    background: url(../img/background.png) no-repeat fixed;
     background-size: cover;
+}
+
+
+footer {
+    background: linear-gradient(rgb(208, 184, 184), rgb(226, 224, 224));
+    color: brown;
 }
