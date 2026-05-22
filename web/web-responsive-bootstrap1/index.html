@@ -22,37 +22,37 @@
         <!-- menu -->
         <nav class="navbar navbar-expand-lg navbar-light px-sm-5 pt-sm-3 px-2">
             <!--logo-->
-            <a class="navbar-brand" href="#">
-                <img src="img/logo.png" alt="logo" class="w-50">
+            <a class="navbar-brand mt-sm-3 me-lg-5" href="#">
+                <img src="img/logo.png" alt="logo">
             </a>
-
+            <!--button vùng con 1 của menu-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent_1">
-
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent_1">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!--vùng con 1 của menu-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent_1" data-bs-parent="#parent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ps-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link mx-lg-5 px-2 px-lg-5 rounded fs-4 text-end" href="#">Home</a>
                     </li>
+                    <!--điều hướng lv2-->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle px-2 px-lg-2 mx-lg-5 text-end rounded fs-4" href="#"
+                            role="button" data-bs-toggle="dropdown">
                             Our Menu
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item text-end fs-5" href="#">Jade</a></li>
+                            <li><a class="dropdown-item text-end fs-5" href="#">Astral Chocolate</a></li>
+                            <li><a class="dropdown-item text-end fs-5" href="#">Rosemary</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    <li class="nav-item mx-lg-5">
+                        <a class="nav-link px-2 px-lg-3 mx-lg-5 text-end rounded fs-4" href="#">Delivery Service</a>
+                    </li>
+                    <li class="nav-item mx-lg-5">
+                        <a class="nav-link px-lg-3 mx-lg-5 text-end rounded fs-4" href="#">Contact</a>
                     </li>
                 </ul>
             </div>

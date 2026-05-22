@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* outline: 1px solid red; */
 }
 
 body {
@@ -9,6 +10,18 @@ body {
     background-size: cover;
 }
 
+.navbar-brand img {
+    width: 60%;
+}
+
+.nav-link:hover {
+    background: black;
+    color: white;
+}
+
+#navbarSupportedContent_1 {
+    border-bottom: 2px solid brown;
+}
 
 footer {
     background: linear-gradient(rgb(208, 184, 184), rgb(226, 224, 224));
