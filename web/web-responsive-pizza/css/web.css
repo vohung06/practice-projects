@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body {
+    background: url(../vtgh/background.jpg) no-repeat fixed;
+    background-size: cover;
+}
+
+.navbar-brand, .navbar-brand img {
+    width: 120px;
+}
+
+#mother {
+    width: 90%;
+}
+
+.nav-item:hover {
+    color: rgb(240, 184, 1)
+}
