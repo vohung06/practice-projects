@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* outline: 1px solid red; */
+    text-align: justify;
 }
 
 body {
@@ -29,11 +29,11 @@ body {
 }
 
 .img-fluid {
-    height: 152px;
+    height: 146px;
     object-fit: cover;
 }
 
 .carousel-item img {
-    height: 310px;
+    height: 300px;
     object-fit: cover;
 }
