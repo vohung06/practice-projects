@@ -38,3 +38,7 @@ body {
     height: 300px;
     object-fit: cover;
 }
+
+.product h1 {
+    font-size: 118%;
+}
