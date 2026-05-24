@@ -15,17 +15,12 @@ body {
     width: 120px;
 }
 
-#mother {
-    width: 90%;
-}
-
-nav {
-    border-radius: 15px;
+.navbar {
     border: 2px solid rgb(18, 87, 38);
 }
 
 .nav-item:hover {
-    color: rgb(240, 184, 1)
+    color: rgb(240, 184, 1);
 }
 
 .btn img {
