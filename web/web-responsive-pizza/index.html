@@ -87,14 +87,55 @@
         </div>
       </div>
     </nav>
-    <main>
-      <div>
-        <img src="vtgh/banner_01.jpg" alt="banner 1" class="col-sm-5 col-12 mt-3 w-100">
-        <img src="vtgh/banner_02.jpg" alt="banner 2" class="col-sm-2 col-12 mt-2 w-50">
-        <img src="vtgh/banner_03.jpg" alt="banner 2" class="col-sm-2 col-12 mt-2 w-50">
-      </div>
 
+    <main>
+      <div class="row">
+        <!-- phần ảnh -->
+        <div class="col-sm-4 col-12">
+          <!-- hàng 1 -->
+          <div class="row">
+            <div class="col-12">
+              <img src="vtgh/banner_01.jpg" alt="banner 1" class="img-fluid mt-3 w-100 rounded-4">
+            </div>
+          </div>
+
+          <!-- hàng 2 -->
+          <div class="row">
+            <div class="col-sm-6 col-12">
+              <img src="vtgh/banner_02.jpg" alt="banner 2" class="img-fluid mt-2 w-100">
+            </div>
+
+            <div class="col-sm-6 col-12">
+              <img src="vtgh/banner_03.jpg" alt="banner 3" class="img-fluid mt-2 w-100">
+            </div>
+          </div>
+        </div>
+
+        <!-- vùng slide -->
+        <div class="col-sm-8 col-12">
+          <div id="carouselExampleIndicators" class="carousel slide mt-3" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                class="active"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="vtgh/Slide_01.png" class="d-block w-100" alt="Slide 1">
+              </div>
+              <div class="carousel-item">
+                <img src="vtgh/Slide_02.png" class="d-block w-100" alt="Slide 2">
+              </div>
+              <div class="carousel-item">
+                <img src="vtgh/Slide_03.png" class="d-block w-100" alt="Slide 3">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+
     <section>
 
     </section>
