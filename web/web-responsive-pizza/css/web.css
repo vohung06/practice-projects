@@ -27,3 +27,13 @@ body {
     width: 25px;
     height: 25px;
 }
+
+.img-fluid {
+    height: 152px;
+    object-fit: cover;
+}
+
+.carousel-item img {
+    height: 310px;
+    object-fit: cover;
+}
