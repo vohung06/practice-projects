@@ -2,10 +2,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
-body {
+#parent {
     background: url(../img/background.png) no-repeat fixed;
     background-size: cover;
 }
@@ -25,6 +25,6 @@ section div p {
 }
 
 footer {
-    background: linear-gradient(rgb(201, 160, 122), rgb(226, 224, 224));
+    background: linear-gradient(rgb(224, 192, 162), rgb(255, 255, 255));
     color: rgb(141, 71, 14);
 }
