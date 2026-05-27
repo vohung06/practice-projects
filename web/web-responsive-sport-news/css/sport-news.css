@@ -17,3 +17,8 @@
 #banner img {
     height: 400px;
 }
+
+.carousel-item {
+    width: 80%;
+    height: 100%;
+}
