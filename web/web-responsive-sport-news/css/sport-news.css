@@ -13,3 +13,7 @@
     background-color: #ef4444;
     color: white;
 }
+
+#banner img {
+    height: 400px;
+}
