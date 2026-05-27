@@ -18,19 +18,33 @@
 </head>
 
 <body>
-    <header class="navbar navbar-expand-sm bg-dark">
-        <div class="container-fluid">
-            <img src="img/logo.png" alt="logo" class="pt-3 px-5">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <button type="button" class="btn btn-white rounded fs-5">
-                    Sign in/Sign up
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark py-2">
+            <div class="container-fluid">
+                <!-- Logo-->
+                <a class="navbar-brand mx-sm-3 mx-1" href=" #">
+                    <img src="img/logo.png" alt="logo">
+                    <span class="fw-bold fs-4 ms-2 pt-2">
+                        <span class="text-light">Sport</span>
+                        <span class="text-danger">360</span>
+                    </span>
+                </a>
+
+                <!-- Button Control-->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Button Login -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <button type="button"
+                        class="btn btn-danger px-4 rounded-pill fw-semibold me-sm-4 me-2 mt-1 mt-sm-0">
+                        Sign in / Sign up
+                    </button>
+                </div>
             </div>
+        </nav>
     </header>
     <section id="banner">
 
