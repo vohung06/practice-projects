@@ -8,3 +8,8 @@
 .navbar-brand img {
     width: 60px;
 }
+
+.collapse button {
+    background-color: #ef4444;
+    color: white;
+}
