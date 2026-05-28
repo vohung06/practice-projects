@@ -17,3 +17,8 @@
 #banner img {
     height: 400px;
 }
+
+.nav-item:hover {
+    background-color: #ef4444;
+    color: white;
+}
