@@ -142,7 +142,7 @@
     <section id="banner">
         <img src="img/banner.jpg" alt="banner" class="img-fluid w-100">
     </section>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-2">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark pb-2 sticky-top">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent2">
@@ -189,43 +189,138 @@
             </div>
         </div>
     </nav>
-    <main class="row">
-        <div id="carouselExampleIndicators" class="carousel slide col-sm-6">
+    <main class="container row">
+        <div id="carouselExampleIndicators" class="carousel slide col-sm-6 shadow-sm rounded-4 overflow-hidden"
+            data-bs-ride="carousel">
+
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active">
+                </button>
+
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1">
+                </button>
+
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2">
+                </button>
             </div>
+
             <div class="carousel-inner">
+
                 <div class="carousel-item active">
-                    <img src="img/slide_img1.jpg" class="d-block w-100" alt="...">
+                    <img src="img/slide_img1.jpg" class="d-block w-100" alt="slide 1">
                 </div>
+
                 <div class="carousel-item">
-                    <img src="img/slide_img2.jpg" class="d-block w-100" alt="...">
+                    <img src="img/slide_img2.jpg" class="d-block w-100" alt="slide 2">
                 </div>
+
                 <div class="carousel-item">
-                    <img src="img/slide_img3.jpg" class="d-block w-100" alt="...">
+                    <img src="img/slide_img3.jpg" class="d-block w-100" alt="slide 3">
                 </div>
+
             </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+
+                <span class="carousel-control-prev-icon"></span>
             </button>
+
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+
+                <span class="carousel-control-next-icon"></span>
             </button>
         </div>
-        <div class="col-sm-6">
-            <h1>World Cup 2026 will be the biggest FIFA World Cup ever.</h1>
+
+        <div class="col-sm-6 d-flex align-items-center">
+
+            <div class="bg-dark text-light p-4 p-lg-5 rounded-4 border-danger w-100">
+
+                <h1 class="fw-bold display-5">
+                    World Cup 2026 will be the biggest FIFA World Cup ever.
+                </h1>
+
+                <p class="text-secondary mt-3 fs-5">
+                    FIFA prepares for the most spectacular football event
+                    with more teams, more stadiums, and global attention.
+                </p>
+
+                <button class="btn btn-danger rounded-pill px-4 mt-2 fw-semibold">
+                    Read More
+                </button>
+
+            </div>
         </div>
     </main>
-    <section>
+    <section class="container row">
+        <!-- Card 1 -->
+        <div class="col-6 col-sm-4">
+            <div class="card bg-dark text-light border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+
+                <img src="img/content_img1.jpg" alt="content 1">
+
+                <div class="card-body">
+
+                    <span class="badge bg-danger mb-3">
+                        FOOTBALL
+                    </span>
+
+                    <p class="card-text fw-semibold fs-5">
+                        Arsenal vs PSG: Premier League Champions
+                        Challenge Europe's Giants
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+
+        <div class="col-4 col-sm-4">
+
+            <div class="card bg-dark text-light border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+
+                <img src="img/content_img2.jpg" alt="content 2">
+
+                <div class="card-body">
+
+                    <span class="badge bg-danger mb-3">
+                        FIFA
+                    </span>
+
+                    <p class="card-text fw-semibold fs-5">
+                        "Goals" - the 2026 FIFA World Cup anthem
+                        featuring Lisa, Anitta, and Rema
+                        sparks heavy backlash online
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+
+        <div class="col-sm-4">
+
+            <div class="card bg-dark text-light border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+                <img src="img/content_img3.jpg" alt="content 3">
+
+                <div class="card-body">
+
+                    <span class="badge bg-danger mb-3">
+                        TENNIS
+                    </span>
+
+                    <p class="card-text fw-semibold fs-5">
+                        Jannik Sinner destroys opponent at
+                        Roland Garros 2026, surpassing
+                        Djokovic and Agassi
+                    </p>
+
+                </div>
+            </div>
+        </div>
 
     </section>
     <footer>
