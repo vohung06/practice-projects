@@ -18,7 +18,33 @@
 </head>
 
 <body>
-    <header></header>
+    <header class="position-relative">
+
+        <!-- ảnh nền -->
+        <img src="img/banner_img.jpg" alt="banner" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover">
+
+        <!-- tạo chiều cao responsive -->
+        <div class="ratio ratio-16x9"></div>
+
+        <!-- form search -->
+        <form
+            class="position-absolute bottom-0 start-50 translate-middle-x translate-middle-md-x-0 start-md-auto end-md-0 w-75 w-md-50 w-lg-25 mb-3 me-md-3">
+
+            <div class="input-group rounded-pill overflow-hidden shadow">
+
+                <!-- input -->
+                <input type="text" class="form-control border-0 py-2" placeholder="Search">
+
+                <!-- icon -->
+                <span class="input-group-text border-0 bg-white px-3">
+                    <i class="bi bi-search"></i>
+                </span>
+
+            </div>
+
+        </form>
+
+    </header>
     <nav></nav>
     <main></main>
     <section></section>
