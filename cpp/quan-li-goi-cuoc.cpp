@@ -71,13 +71,14 @@ class HoaDon {
 		KhachHang kh;
 		GoiCuoc *goi;
 	public:
-		HoaDon(KhachHang kh, GoiCuoc *g) {
+		HoaDon(KhachHang kh, GoiCuoc *goi) {
 			this->kh = kh;
 			this->goi = goi;
 		}
 		void inHoaDon() {
+			cout << "-> THONG TIN GOI CUOC KHACH HANG: " << endl;
 			kh.xuat();
-			cout << "Tong cuoc: " << goi->tinhTC() << " VND";
+			cout << " - Tong cuoc: " << goi->tinhTC() << " VND";
 		}
 };
 
@@ -89,10 +90,7 @@ int main() {
 	cout << "Cuoc tong: " << gb1.tinhTC() << endl;
 	KhachHang kh1("Nguyen Thi Kim Phuc", "072100900315", "TP.HCM");
 	kh1.xuat();
-	KhachHang kh2;
-	kh2.nhap();
-	kh2.xuat();
-	HoaDon hd1(kh2, &gb1);
+	HoaDon hd1(kh1, &gb1);
 	hd1.inHoaDon();
 	return 0;
 }
