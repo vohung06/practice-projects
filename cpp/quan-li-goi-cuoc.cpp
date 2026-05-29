@@ -35,11 +35,47 @@ class GoiBasic : public GoiCuoc {
 		}
 };
 
+class KhachHang {
+	private:
+		string hoTen;
+		string cccd;
+		string diaChi;
+	public:
+		KhachHang() {
+			hoTen = "";
+			cccd = "";
+			diaChi = "";
+		}
+		KhachHang(string hoTen, string cccd, string diaChi) {
+			this->hoTen = hoTen;
+			this->cccd = cccd;
+			this->diaChi = diaChi;
+		}
+		void nhap() {
+			cout << "Nhap ho ten: ";
+			getline(cin, hoTen);
+			cout << "Nhap cccd: ";
+			getline(cin, cccd);
+			cout << "Nhap dia chi: ";
+			getline(cin, diaChi);
+		}
+		void xuat() {
+			cout << " - Ho ten khach hang: " << hoTen << endl;
+			cout << " - CCCD: " << cccd << endl;
+			cout << " - Dia chi: " << diaChi << endl;
+		}
+};
+
 int main() {
 	GoiBasic gb1;
 	gb1.set(200,100);
 	cout << "Cuoc dien thoai: " << gb1.tinhCDT() << endl;
 	cout << "Cuoc internet: " << gb1.tinhCI() << endl;
 	cout << "Cuoc tong: " << gb1.tinhTC() << endl;
+	KhachHang kh1("Nguyen Thi Kim Phuc", "072100900315", "TP.HCM");
+	kh1.xuat();
+	KhachHang kh2;
+	kh2.nhap();
+	kh2.xuat();
 	return 0;
 }
