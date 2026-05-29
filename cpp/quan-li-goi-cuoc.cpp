@@ -66,6 +66,21 @@ class KhachHang {
 		}
 };
 
+class HoaDon {
+	private:
+		KhachHang kh;
+		GoiCuoc *goi;
+	public:
+		HoaDon(KhachHang kh, GoiCuoc *g) {
+			this->kh = kh;
+			this->goi = goi;
+		}
+		void inHoaDon() {
+			kh.xuat();
+			cout << "Tong cuoc: " << goi->tinhTC() << " VND";
+		}
+};
+
 int main() {
 	GoiBasic gb1;
 	gb1.set(200,100);
@@ -77,5 +92,7 @@ int main() {
 	KhachHang kh2;
 	kh2.nhap();
 	kh2.xuat();
+	HoaDon hd1(kh2, &gb1);
+	hd1.inHoaDon();
 	return 0;
 }
