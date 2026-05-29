@@ -11,9 +11,12 @@ class GoiCuoc {
 			thoiGianGoi = 0;
 			luuLuong = 0;
 		}
-		void set(double thoiGianGoi, double luuLuong) {
-			this->thoiGianGoi = thoiGianGoi;
-			this->luuLuong = luuLuong;
+		void nhapGoi() {
+			cout << "Nhap thoi gian goi: ";
+			cin >> thoiGianGoi;
+			cout << "Nhap luu luong internet: ";
+			cin >> luuLuong;
+			cin.ignore();
 		}
 		virtual double tinhCDT() = 0;
 		virtual double tinhCI() = 0;
@@ -70,7 +73,7 @@ class KhachHang {
 			this->cccd = cccd;
 			this->diaChi = diaChi;
 		}
-		void nhap() {
+		void nhapKH() {
 			cout << "Nhap ho ten: ";
 			getline(cin, hoTen);
 			cout << "Nhap cccd: ";
@@ -103,7 +106,7 @@ class HoaDon {
 
 int main() {
 	GoiBasic gb1;
-	gb1.set(200,100);
+	gb1.nhapGoi();
 	cout << "Cuoc dien thoai: " << gb1.tinhCDT() << endl;
 	cout << "Cuoc internet: " << gb1.tinhCI() << endl;
 	cout << "Cuoc tong: " << gb1.tinhTC() << endl;
@@ -113,11 +116,12 @@ int main() {
 	hd1.inHoaDon();
 	cout << endl;
 	GoiPremium gp1;
-	gp1.set(200, 100);
+	gp1.nhapGoi();
 	cout << "Cuoc dien thoai: " << gp1.tinhCDT() << endl;
 	cout << "Cuoc internet: " << gp1.tinhCI() << endl;
 	cout << "Cuoc tong: " << gp1.tinhTC() << endl;
-	KhachHang kh2("Nguyen Khanh Ngan", "056301612912", "Khanh Hoa");
+	KhachHang kh2;
+	kh2.nhapKH();
 	kh2.xuat();
 	HoaDon hd2(kh2, &gp1);
 	hd2.inHoaDon();
