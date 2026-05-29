@@ -35,6 +35,25 @@ class GoiBasic : public GoiCuoc {
 		}
 };
 
+class GoiPremium : public GoiCuoc {
+	public:
+		GoiPremium() {
+		}
+		//Cuoc dien thoai = thoi gian goi * 500
+		double tinhCDT() override {
+			return thoiGianGoi * 500;
+		}
+		//Cuoc internet = luu luong * 1000
+		double tinhCI() override {
+			return luuLuong * 1000;
+		}
+		//Cuoc tong = cuoc dien thoai + cuoc internet
+		double tinhTC() override {
+			return tinhCDT() + tinhCI();
+		}
+};
+
+
 class KhachHang {
 	private:
 		string hoTen;
@@ -78,7 +97,7 @@ class HoaDon {
 		void inHoaDon() {
 			cout << "-> THONG TIN GOI CUOC KHACH HANG: " << endl;
 			kh.xuat();
-			cout << " - Tong cuoc: " << goi->tinhTC() << " VND";
+			cout << " - Tong cuoc: " << goi->tinhTC() << " VND" << endl;
 		}
 };
 
@@ -92,5 +111,15 @@ int main() {
 	kh1.xuat();
 	HoaDon hd1(kh1, &gb1);
 	hd1.inHoaDon();
+	cout << endl;
+	GoiPremium gp1;
+	gp1.set(200, 100);
+	cout << "Cuoc dien thoai: " << gp1.tinhCDT() << endl;
+	cout << "Cuoc internet: " << gp1.tinhCI() << endl;
+	cout << "Cuoc tong: " << gp1.tinhTC() << endl;
+	KhachHang kh2("Nguyen Khanh Ngan", "056301612912", "Khanh Hoa");
+	kh2.xuat();
+	HoaDon hd2(kh2, &gp1);
+	hd2.inHoaDon();
 	return 0;
 }
