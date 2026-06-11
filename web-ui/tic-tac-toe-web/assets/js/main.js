@@ -21,13 +21,15 @@ const playerO = document.querySelector(".o");
 function changeTurn() {
     if (turn === "X") {
         turn = "O";
-        playerX.classList.remove("active");
-        playerO.classList.add("active");
+        document.querySelector("#bg").style.left = "100px";
+        // playerX.classList.remove("active");
+        // playerO.classList.add("active");
     }
     else {
         turn = "X";
-        playerO.classList.remove("active");
-        playerX.classList.add("active");
+        document.querySelector("#bg").style.left = "0";
+        // playerO.classList.remove("active");
+        // playerX.classList.add("active");
     }
 }
 
@@ -73,8 +75,10 @@ document.querySelector("#play-again").addEventListener("click", () => {
     isGameOver = false;
     turn = "X";
 
-    playerX.classList.add("active");
-    playerO.classList.remove("active");
+    // playerX.classList.add("active");
+    // playerO.classList.remove("active");
+
+    document.querySelector("#bg").style.left = "0";
 
     document.querySelector("#result").innerHTML = "";
     document.querySelector("#play-again").style.display = "none";

@@ -27,6 +27,9 @@ body {
 
 #turn-box {
     display: flex;
+    position: relative;
+    width: 200px;
+    height: 45px;
     margin-top: 5%;
     border: 2px solid #000000;
 }
@@ -34,15 +37,26 @@ body {
 #turn-box h4 {
     width: 100px;
     padding: 3% 0;
+    font-size: 140%;
     border: 2px solid #000000;
 }
 
-.player {
+/* .player {
     background-color: #252a34;
 }
 
 .player.active {
     background-color: #ff2e63;
+} */
+
+#bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #ff2e63;
+    z-index: -1;
 }
 
 main {
