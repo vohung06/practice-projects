@@ -69,8 +69,9 @@ main {
     background-color: #ff2e63;
 }
 
-button {
+#play-again {
     background-color: #ff2e63;
+    display: none;
     padding: 10px 25px;
     font-size: 150%;
     font-weight: 500;
@@ -79,7 +80,7 @@ button {
     margin: 1% 0;
 }
 
-button:hover {
+#play-again:hover {
     padding: 10px 40px;
     background-color: #08d9d6;
     color: #000000;

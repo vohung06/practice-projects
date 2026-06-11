@@ -41,12 +41,47 @@ function checkWin() {
         let v0 = boxes[winCons[i][0]].innerHTML;
         let v1 = boxes[winCons[i][1]].innerHTML;
         let v2 = boxes[winCons[i][2]].innerHTML;
-        if (v0 != " " && v0 === v1 && v1 === v2) {
+        if (v0 != "" && v0 === v1 && v1 === v2) {
             isGameOver = true;
+            document.querySelector("#result").innerHTML = turn + " win";
+            document.querySelector("#play-again").style.display = "inline";
+
+            for (let j = 0; j < 3; j++) {
+                boxes[winCons[i][j]].style.backgroundColor = "#08d9d6";
+                boxes[winCons[i][j]].style.color = "#000000";
+            }
         }
     }
 }
 
 function checkDraw() {
-
+    if (!isGameOver) {
+        let isDraw = true;
+        boxes.forEach(e => {
+            if (e.innerHTML === "")
+                isDraw = false;
+        })
+        if (isDraw) {
+            isGameOver = true;
+            document.querySelector("#result").innerHTML = "Draw";
+            document.querySelector("#play-again").style.display = "inline";
+        }
+    }
 }
+
+document.querySelector("#play-again").addEventListener("click", () => {
+    isGameOver = false;
+    turn = "X";
+
+    playerX.classList.add("active");
+    playerO.classList.remove("active");
+
+    document.querySelector("#result").innerHTML = "";
+    document.querySelector("#play-again").style.display = "none";
+
+    boxes.forEach(e => {
+        e.innerHTML = "";
+        e.style.backgroundColor = "";
+        e.style.color = "";
+    });
+});
