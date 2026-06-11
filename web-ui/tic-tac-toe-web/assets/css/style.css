@@ -37,6 +37,14 @@ body {
     border: 2px solid #000000;
 }
 
+.player {
+    background-color: #252a34;
+}
+
+.player.active {
+    background-color: #ff2e63;
+}
+
 main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
