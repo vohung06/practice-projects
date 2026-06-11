@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #fafafa;
+    text-align: center;
+    font-family: sans-serif;
+    transition: 0.2s ease-in-out;
+}
+
+body {
+    width: 100vw;
+    background-color: #1a1a1a;
+    padding-top: 5vh;
+}
