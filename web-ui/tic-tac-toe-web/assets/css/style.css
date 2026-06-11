@@ -10,6 +10,27 @@
 
 body {
     width: 100vw;
-    background-color: #1a1a1a;
-    padding-top: 5vh;
+    background-color: #252a34;
+}
+
+#turn-container {
+    width: 200px;
+    margin: auto;
+    margin-top: 5%;
+    display: grid;
+}
+
+#turn-container h3 {
+    font-size: 120%;
+}
+
+#turn-box {
+    display: flex;
+    margin-top: 5%;
+}
+
+#turn-box h4 {
+    width: 100px;
+    padding: 3% 0;
+    border: 1px solid #fafafa;
 }
