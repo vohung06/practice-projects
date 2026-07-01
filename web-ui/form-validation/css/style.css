@@ -17,16 +17,16 @@ body {
     width: 40%;
     height: 90%;
     margin: auto;
-    padding: 1.5% 3%;
+    padding: 1% 3%;
     background-color: #fafafa;
 }
 
 #box {
-    margin-bottom: 2%;
+    margin-bottom: 4%;
 }
 
 #box h1 {
-    font-size: 220%;
+    font-size: 200%;
     font-weight: 700;
     text-align: center;
 }
@@ -37,13 +37,13 @@ body {
 }
 
 .form {
-    margin: 5% 0;
+    margin: 3% 0;
 }
 
 .form h2 {
     font-size: 100%;
     font-weight: 500;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
 }
 
 .form input {
@@ -51,14 +51,21 @@ body {
     height: 45px;
     padding: 1.5%;
     font-size: 100%;
+    margin-bottom: 1%;
     border: 1.5px solid gray;
     border-radius: 5px;
+}
+
+.message {
+    display: block;
+    min-height: 16px;
+    font-size: 100%;
 }
 
 button {
     width: 100%;
     height: 45px;
-    margin-top: 3%;
+    margin-top: 0.5%;
     background-color: rgb(12, 179, 142);
     color: #fafafa;
     font-size: 140%;
