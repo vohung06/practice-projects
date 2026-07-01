@@ -5,36 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form validation</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="box">
-        <h1>Tạo tài khoản</h1>
-        <p>Nhập thông tin để bắt đầu</p>
+    <div id="parent">
+        <div id="box">
+            <h1>Tạo tài khoản</h1>
+            <p>Nhập thông tin để bắt đầu</p>
+        </div>
+        <div class="form">
+            <h2>Họ và tên</h2>
+            <input type="text" placeholder="VD: Nguyễn Văn A">
+            <span></span>
+        </div>
+        <div class="form">
+            <h2>Email</h2>
+            <input type="text" placeholder="VD: email@domain.com">
+            <span></span>
+        </div>
+        <div class="form">
+            <h2>Mật khẩu</h2>
+            <input type="text" placeholder="Mật khẩu">
+            <span></span>
+        </div>
+        <div class="form">
+            <h2>Nhập lại mật khẩu</h2>
+            <input type="text" placeholder="Nhập lại mật khẩu">
+            <span></span>
+        </div>
+        <button>
+            Đăng ký
+        </button>
     </div>
-    <div class="form">
-        <h2>Họ và tên</h2>
-        <input type="text" placeholder="Nguyễn Văn A">
-        <span></span>
-    </div>
-    <div class="form">
-        <h2>Email</h2>
-        <input type="text" placeholder="nguyenvana@gmail.com">
-        <span></span>
-    </div>
-    <div class="form">
-        <h2>Mật khẩu</h2>
-        <input type="text" placeholder="........">
-        <span></span>
-    </div>
-    <div class="form">
-        <h2>Xác nhận mật khẩu</h2>
-        <input type="text" placeholder="........">
-        <span></span>
-    </div>
-    <button>
-        Đăng ký
-    </button>
 </body>
 
 </html>
