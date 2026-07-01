@@ -17,6 +17,51 @@ body {
     width: 40%;
     height: 90%;
     margin: auto;
-    padding: 3%;
+    padding: 1.5% 3%;
     background-color: #fafafa;
+}
+
+#box {
+    margin-bottom: 2%;
+}
+
+#box h1 {
+    font-size: 220%;
+    font-weight: 700;
+    text-align: center;
+}
+
+#box p {
+    text-align: center;
+    margin-top: 1%;
+}
+
+.form {
+    margin: 5% 0;
+}
+
+.form h2 {
+    font-size: 100%;
+    font-weight: 500;
+    margin-bottom: 2%;
+}
+
+.form input {
+    width: 100%;
+    height: 45px;
+    padding: 1.5%;
+    font-size: 100%;
+    border: 1.5px solid gray;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    margin-top: 3%;
+    background-color: rgb(12, 179, 142);
+    color: #fafafa;
+    font-size: 140%;
+    border: none;
+    border-radius: 5px;
 }
