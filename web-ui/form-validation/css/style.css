@@ -76,12 +76,12 @@ button:hover {
     transition: 0.3s;
 }
 
-.form.invalid input {
+.form-group.invalid input {
     border: 1.5px solid #dc2626;
     color: #dc2626;
     background-color: rgb(250, 217, 217);
 }
 
-.form.invalid span {
+.form-group.invalid span {
     color: #dc2626;
 }
