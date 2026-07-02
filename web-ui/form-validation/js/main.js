@@ -1,13 +1,27 @@
 //Object Validator
-function Validator() {
+function Validator(options) {
+    var formElement = document.querySelector(options.form);
 
+    if (formElement) {
+
+    }
 }
 
 //Define rules
-Validator.isRequired = function () {
+Validator.isRequired = function (selector) {
+    return {
+        selector: selector,
+        test: function () {
 
+        }
+    };
 }
 
-Validator.isEmail = function () {
+Validator.isEmail = function (selector) {
+    return {
+        selector: selector,
+        test: function () {
 
+        }
+    };
 }
