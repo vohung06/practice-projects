@@ -42,10 +42,11 @@
 
     <script>
         Validator({
-            form: '#form-1',
+            form: "#form-1",
+            errorSelector: ".message",
             rules: [
-                Validator.isRequired('#fullname'),
-                Validator.isEmail('#email'),
+                Validator.isRequired("#fullname"),
+                Validator.isEmail("#email"),
             ]
         });
     </script>
