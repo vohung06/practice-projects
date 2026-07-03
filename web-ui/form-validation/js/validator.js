@@ -67,3 +67,12 @@ Validator.minLength = function (selector, min) {
         }
     };
 }
+
+Validator.isConfirmed = function (selector, getConfirmValue) {
+    return {
+        selector: selector,
+        test: function (value) {
+            return (value === getConfirmValue()) ? undefined : "Nhập lại không chính xác";
+        }
+    }
+}
