@@ -1,10 +1,19 @@
 //Object Validator
 function Validator(options) {
+
+    function getParent(element, selector) {
+        while (element.parentElement) {
+            if (element.parentElement.matches(selector)) {
+                return element.parentElement;
+            }
+            element = element.parentElement;
+        }
+    }
+
     var selectorRules = {};
+
     function validate(inputElement, rule) {
-        // value: inputElement.value
-        // test func: rule.test
-        var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
+        var errorElement = getParent(inputElement, options.formGroupSelector).querySelector(options.errorSelector);
         var errorMessage;
         // get all rules for the selector
         var rules = selectorRules[rule.selector];
@@ -19,11 +28,11 @@ function Validator(options) {
 
         if (errorMessage) {
             errorElement.innerText = errorMessage;
-            inputElement.parentElement.classList.add("invalid");
+            getParent(inputElement, options.formGroupSelector).classList.add("invalid");
         }
         else {
             errorElement.innerText = "";
-            inputElement.parentElement.classList.remove("invalid");
+            getParent(inputElement, options.formGroupSelector).classList.remove("invalid");
         }
 
         return !errorMessage;
@@ -46,13 +55,19 @@ function Validator(options) {
             });
 
             if (isFormValid) {
+                // submit with js
                 if (typeof options.onSubmit === 'function') {
                     var enableInputs = formElement.querySelectorAll('[name]:not([disable])');
                     var formValues = Array.from(enableInputs).reduce(function (values, input) {
-                        return (values[input.name] = input.value) && values;
+                        values[input.name] = input.value;
+                        return values;
                     }, {});
 
                     options.onSubmit(formValues);
+                }
+                // submit with default behavior
+                else {
+                    formElement.submit();
                 }
             }
         }
@@ -77,9 +92,9 @@ function Validator(options) {
 
                 // validate while the user is typing input
                 inputElement.oninput = function () {
-                    var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
+                    var errorElement = getParent(inputElement, options.formGroupSelector).querySelector(options.errorSelector);
                     errorElement.innerText = "";
-                    inputElement.parentElement.classList.remove("invalid");
+                    getParent(inputElement, options.formGroupSelector).classList.remove("invalid");
                 }
             }
         });
