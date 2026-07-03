@@ -25,10 +25,37 @@ function Validator(options) {
             errorElement.innerText = "";
             inputElement.parentElement.classList.remove("invalid");
         }
+
+        return !errorMessage;
     }
 
     var formElement = document.querySelector(options.form);
     if (formElement) {
+        // listen event submit on button
+        formElement.onsubmit = function (e) {
+            e.preventDefault();
+
+            var isFormValid = true;
+
+            options.rules.forEach(function (rule) {
+                var inputElement = formElement.querySelector(rule.selector);
+                var isValid = validate(inputElement, rule);
+                if (!isValid) {
+                    isFormValid = false;
+                }
+            });
+
+            if (isFormValid) {
+                if (typeof options.onSubmit === 'function') {
+                    var enableInputs = formElement.querySelector('[name]:not([disable])');
+                    options.onSubmit({
+
+                    });
+                }
+            }
+        }
+
+        // loop through each rule and listen events (blur, input)
         options.rules.forEach(function (rule) {
             //Save rules
             if (Array.isArray(selectorRules[rule.selector])) {
