@@ -46,11 +46,13 @@
             errorSelector: ".message",
             rules: [
                 Validator.isRequired("#fullname"),
+                Validator.isRequired("#email"),
                 Validator.isEmail("#email"),
                 Validator.minLength("#password", 6),
+                Validator.isRequired("#confirm-password"),
                 Validator.isConfirmed("#confirm-password", function () {
                     return document.querySelector("#form-1 #password").value;
-                }),
+                }, "Mật khẩu nhập lại không chính xác"),
             ]
         });
     </script>
