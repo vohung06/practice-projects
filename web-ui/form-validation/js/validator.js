@@ -47,10 +47,12 @@ function Validator(options) {
 
             if (isFormValid) {
                 if (typeof options.onSubmit === 'function') {
-                    var enableInputs = formElement.querySelector('[name]:not([disable])');
-                    options.onSubmit({
+                    var enableInputs = formElement.querySelectorAll('[name]:not([disable])');
+                    var formValues = Array.from(enableInputs).reduce(function (values, input) {
+                        return (values[input.name] = input.value) && values;
+                    }, {});
 
-                    });
+                    options.onSubmit(formValues);
                 }
             }
         }
