@@ -17,9 +17,7 @@
             </div>
             <div class="form-group">
                 <label for="fullname">Họ và tên</label>
-                <div>
-                    <input id="fullname" name="fullname" type="text" placeholder="VD: Nguyễn Văn A">
-                </div>
+                <input id="fullname" name="fullname" type="text" placeholder="VD: Nguyễn Văn A">
                 <span class="message"></span>
             </div>
             <div class="form-group">
@@ -35,6 +33,14 @@
             <div class="form-group">
                 <label for="confirm-password">Nhập lại mật khẩu</label>
                 <input id="confirm-password" name="confirm-password" type="password" placeholder="Nhập lại mật khẩu">
+                <span class="message"></span>
+            </div>
+            <div class="form-group">
+                <label for="gender">Giới tính</label>
+                <div>
+                    <input name="gender" type="radio" value="male">Nam
+                    <input name="gender" type="radio" value="female">Nữ
+                </div>
                 <span class="message"></span>
             </div>
             <button type="submit">
@@ -58,6 +64,7 @@
                 Validator.isConfirmed("#confirm-password", function () {
                     return document.querySelector("#form-1 #password").value;
                 }, "Mật khẩu nhập lại không chính xác"),
+                Validator.isRequired("input[name='gender']"),
             ],
             onSubmit: function (data) {
                 console.log(data);

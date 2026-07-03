@@ -20,7 +20,14 @@ function Validator(options) {
 
         // loop through each rule and validate
         for (var i = 0; i < rules.length; i++) {
-            errorMessage = rules[i](inputElement.value);
+            switch (inputElement.type) {
+                case "radio":
+                case "checkbox":
+                    errorMessage = rules[i](formElement.querySelector(rule.selector + ":checked"));
+                    break;
+                default: errorMessage = rules[i](inputElement.value);
+            }
+
             if (errorMessage) {
                 break;
             }
@@ -82,9 +89,9 @@ function Validator(options) {
                 selectorRules[rule.selector] = [rule.test];
             }
 
-            var inputElement = formElement.querySelector(rule.selector);
+            var inputElements = formElement.querySelectorAll(rule.selector);
 
-            if (inputElement) {
+            Array.from(inputElements).forEach(function (inputElement) {
                 // validate on blur
                 inputElement.onblur = function () {
                     validate(inputElement, rule);
@@ -96,7 +103,8 @@ function Validator(options) {
                     errorElement.innerText = "";
                     getParent(inputElement, options.formGroupSelector).classList.remove("invalid");
                 }
-            }
+            })
+
         });
 
     }
@@ -107,7 +115,7 @@ Validator.isRequired = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value.trim() ? undefined : (message || "Vui lòng nhập nội dung");
+            return value ? undefined : (message || "Vui lòng nhập nội dung");
         }
     };
 }
