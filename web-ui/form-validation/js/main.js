@@ -6,7 +6,7 @@ function isRequired(value) {
 
 function validate(selector, error) {
     var errorElement = selector.parentElement.querySelector(".message");
-    if (errorElement) {
+    if (error) {
         errorElement.innerText = error;
         selector.parentElement.classList.add("invalid");
     }
@@ -19,14 +19,10 @@ function validate(selector, error) {
 // validate fullname
 fullnameElement.onblur = function () {
     var error = isRequired(fullnameElement.value);
-    if (error) {
-        validate(fullnameElement, error);
-    }
+    validate(fullnameElement, error);
 }
 
 fullnameElement.oninput = function () {
     var error = isRequired(fullnameElement.value);
-    if (error) {
-        validate(fullnameElement, error);
-    }
+    validate(fullnameElement, error);
 }
