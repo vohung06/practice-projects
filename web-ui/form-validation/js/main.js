@@ -1,5 +1,6 @@
 function validate(selector, error) {
     var errorElement = selector.parentElement.querySelector(".message");
+    console.log("validate: ", error);
     if (error) {
         errorElement.innerText = error;
         selector.parentElement.classList.add("invalid");
@@ -20,11 +21,21 @@ function isEmail(value) {
 }
 
 function minLength(value) {
-    return (value >= 6) ? undefined : "Vui lòng nhập tối thiểu 6 ký tự";
+    return (value.length >= 6) ? undefined : "Vui lòng nhập tối thiểu 6 ký tự";
+}
+
+function isConfirmed(selector) {
+    return function (value) {
+        var confirmValue = document.querySelector(selector).value;
+        return (value === confirmValue) ? undefined : "Nhập lại không chính xác";
+    }
 }
 
 function check(selector, rule) {
     var error = rule(selector.value);
+    console.log("rule: ", rule.name);
+    console.log("value: ", selector.value);
+    console.log("error", error);
     validate(selector, error);
 }
 
@@ -61,4 +72,17 @@ passwordElement.onblur = function () {
 
 passwordElement.oninput = function () {
     check(passwordElement, minLength);
+}
+
+// validate confirm-password
+var confirmElement = document.querySelector("#confirm-password");
+
+confirmElement.onblur = function () {
+    check(confirmElement, isRequired);
+    check(confirmElement, isConfirmed("#password"));
+}
+
+confirmElement.oninput = function () {
+    check(confirmElement, isRequired);
+    check(confirmElement, isConfirmed("#password"));
 }
