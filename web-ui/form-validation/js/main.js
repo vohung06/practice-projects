@@ -19,6 +19,10 @@ function isEmail(value) {
     return regex.test(value) ? undefined : "Vui lòng nhập email";
 }
 
+function minLength(value) {
+    return (value >= 6) ? undefined : "Vui lòng nhập tối thiểu 6 ký tự";
+}
+
 function check(selector, rule) {
     var error = rule(selector.value);
     validate(selector, error);
@@ -35,7 +39,7 @@ fullnameElement.oninput = function () {
     check(fullnameElement, isRequired);
 }
 
-//validate email
+// validate email
 var emailElement = document.querySelector("#email");
 
 emailElement.onblur = function () {
@@ -46,4 +50,15 @@ emailElement.onblur = function () {
 emailElement.oninput = function () {
     check(emailElement, isRequired);
     check(emailElement, isEmail);
+}
+
+// validate password
+var passwordElement = document.querySelector("#password");
+
+passwordElement.onblur = function () {
+    check(passwordElement, minLength);
+}
+
+passwordElement.oninput = function () {
+    check(passwordElement, minLength);
 }
