@@ -7,11 +7,12 @@ function validate(selector, rules) {
             // display the first error found and return
             errorElement.innerText = error;
             selector.parentElement.classList.add("invalid");
-            return;
+            return false;
         }
     }
 
     clearError(selector);
+    return true;
 }
 
 function clearError(selector) {
@@ -82,4 +83,41 @@ confirmElement.onblur = function () {
 
 confirmElement.oninput = function () {
     clearError(confirmElement);
+}
+
+// listen event submit on button
+var formElement = document.querySelector("#form-1");
+
+formElement.onsubmit = function (e) {
+    e.preventDefault();
+
+    var isFormValid = true;
+
+    if (!validate(fullnameElement, [isRequired])) {
+        isFormValid = false;
+    }
+
+    if (!validate(emailElement, [isRequired, isEmail])) {
+        isFormValid = false;
+    }
+
+    if (!validate(passwordElement, [minLength])) {
+        isFormValid = false;
+    }
+
+    if (!validate(confirmElement, [isRequired, isConfirmed("#password")])) {
+        isFormValid = false;
+    }
+
+    if (isFormValid) {
+        console.log("Sucessful!");
+
+        var formValue = {
+            fullname: fullnameElement.value.trim(),
+            email: emailElement.value,
+            password: passwordElement.value,
+            confirmPassword: confirmElement.value,
+        };
+        console.log(formValue);
+    }
 }
