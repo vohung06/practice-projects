@@ -1,14 +1,19 @@
-function validate(selector, error) {
+function validate(selector, rules) {
     var errorElement = selector.parentElement.querySelector(".message");
-    console.log("validate: ", error);
-    if (error) {
-        errorElement.innerText = error;
-        selector.parentElement.classList.add("invalid");
+
+    for (var i = 0; i < rules.length; i++) {
+        var error = rules[i](selector.value);
+        if (error) {
+            // display the first error found and return
+            errorElement.innerText = error;
+            selector.parentElement.classList.add("invalid");
+            return;
+        }
     }
-    else {
-        errorElement.innerText = "";
-        selector.parentElement.classList.remove("invalid");
-    }
+
+    errorElement.innerText = "";
+    selector.parentElement.classList.remove("invalid");
+
 }
 
 function isRequired(value) {
@@ -31,58 +36,46 @@ function isConfirmed(selector) {
     }
 }
 
-function check(selector, rule) {
-    var error = rule(selector.value);
-    console.log("rule: ", rule.name);
-    console.log("value: ", selector.value);
-    console.log("error", error);
-    validate(selector, error);
-}
-
 // validate fullname
 var fullnameElement = document.querySelector("#fullname");
 
 fullnameElement.onblur = function () {
-    check(fullnameElement, isRequired);
+    validate(fullnameElement, [isRequired]);
 }
 
 fullnameElement.oninput = function () {
-    check(fullnameElement, isRequired);
+    validate(fullnameElement, [isRequired]);
 }
 
 // validate email
 var emailElement = document.querySelector("#email");
 
 emailElement.onblur = function () {
-    check(emailElement, isRequired);
-    check(emailElement, isEmail);
+    validate(emailElement, [isRequired, isEmail]);
 }
 
 emailElement.oninput = function () {
-    check(emailElement, isRequired);
-    check(emailElement, isEmail);
+    validate(emailElement, [isRequired, isEmail]);
 }
 
 // validate password
 var passwordElement = document.querySelector("#password");
 
 passwordElement.onblur = function () {
-    check(passwordElement, minLength);
+    validate(passwordElement, [minLength]);
 }
 
 passwordElement.oninput = function () {
-    check(passwordElement, minLength);
+    validate(passwordElement, [minLength]);
 }
 
 // validate confirm-password
 var confirmElement = document.querySelector("#confirm-password");
 
 confirmElement.onblur = function () {
-    check(confirmElement, isRequired);
-    check(confirmElement, isConfirmed("#password"));
+    validate(confirmElement, [isRequired, isConfirmed("#password")]);
 }
 
 confirmElement.oninput = function () {
-    check(confirmElement, isRequired);
-    check(confirmElement, isConfirmed("#password"));
+    validate(confirmElement, [isRequired, isConfirmed("#password")]);
 }
