@@ -11,9 +11,13 @@ function validate(selector, rules) {
         }
     }
 
+    clearError(selector);
+}
+
+function clearError(selector) {
+    var errorElement = selector.parentElement.querySelector(".message");
     errorElement.innerText = "";
     selector.parentElement.classList.remove("invalid");
-
 }
 
 function isRequired(value) {
@@ -44,7 +48,7 @@ fullnameElement.onblur = function () {
 }
 
 fullnameElement.oninput = function () {
-    validate(fullnameElement, [isRequired]);
+    clearError(fullnameElement);
 }
 
 // validate email
@@ -55,7 +59,7 @@ emailElement.onblur = function () {
 }
 
 emailElement.oninput = function () {
-    validate(emailElement, [isRequired, isEmail]);
+    clearError(emailElement);
 }
 
 // validate password
@@ -66,7 +70,7 @@ passwordElement.onblur = function () {
 }
 
 passwordElement.oninput = function () {
-    validate(passwordElement, [minLength]);
+    clearError(passwordElement);
 }
 
 // validate confirm-password
@@ -77,5 +81,5 @@ confirmElement.onblur = function () {
 }
 
 confirmElement.oninput = function () {
-    validate(confirmElement, [isRequired, isConfirmed("#password")]);
+    clearError(confirmElement);
 }
