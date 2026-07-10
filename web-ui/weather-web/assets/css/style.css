@@ -26,19 +26,20 @@ header {
 #logo {
     font-size: 28px;
     font-weight: bold;
-    padding: 1.5%;
+    padding: 1%;
     color: white;
 }
 
 .search-box {
     position: relative;
     width: 700px;
-    height: 90%;
-    margin: 1% 20% 0 0;
+    height: 100%;
+    margin: 0.5% 20% 0 0;
 }
 
 .search-box input {
     width: 100%;
+    height: 70%;
     padding: 14px 100px 14px 18px;
     border: none;
     outline: none;
@@ -48,8 +49,8 @@ header {
 }
 
 .search-box i {
-    padding: 1.7% 4%;
-    font-size: 129.5%;
+    padding: 1% 4%;
+    font-size: 110%;
     position: absolute;
     right: 0px;
     top: 0px;
@@ -61,4 +62,23 @@ header {
 
 .search-box i:hover {
     background-color: rgb(82, 82, 82);
+}
+
+main {
+    width: 100%;
+    height: 85%;
+}
+
+aside {
+    width: 20%;
+    height: 100%;
+    float: left;
+    background-color: cadetblue;
+}
+
+section {
+    width: 80%;
+    height: 100%;
+    float: right;
+    background-color: lightcoral;
 }
